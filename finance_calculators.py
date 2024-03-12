@@ -70,9 +70,11 @@ while True:
                 exit(f"Total of {installments} installments of £{float(repayments):,.2f} ")
                 
 
-            except ValueError or TypeError:
-                print("Please try again")  # In this case the program reprompt house_value input
-                continue
+
+            except ValueError:
+                print("Please enter house price, interest rate, and number of monthly installments.")
+            except TypeError:
+                print("Invalid input. Please make sure to enter numbers only.")            
 
 
 
