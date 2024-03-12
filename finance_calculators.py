@@ -46,9 +46,10 @@ while True:
                         exit(f"At the end of {time} years your total amount will be £{float(amount):,.2f}")
                         
 
-            except ValueError or TypeError:   
-                print("Please try again")     # # In this case the program reprompt deposit input
-                continue
+            except ValueError:
+                print("Please enter a number for the deposit, interest rate, and years.")
+            except TypeError:
+                print("Invalid input. Please make sure to enter numbers only.")
 
     elif invest_or_bond == "bond":
         
@@ -75,4 +76,3 @@ while True:
 
 
 
-#thank you for your corrections, I also installed a spell checker extension so let's hope it won't happen again.
