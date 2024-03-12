@@ -1,5 +1,5 @@
-# financial_calculator
-## Task for HyperionDev Data Science
+# Finance Calculator
+## Task for HyperionDev's Data Science Bootcamp
 
 ### Project Description:
 
