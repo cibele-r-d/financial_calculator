@@ -1,6 +1,13 @@
 import math
 from sys import exit
 
+def start_again():
+    choice = input("Do you want to perform another calculation? (yes/no): ").strip().lower()
+    if choice != "yes":
+        exit("Thank you for using our calculator. Goodbye!")
+        
+
+
 print("investment - to calculate the amount of interest you'll earn on your investment")
 print("bond       - to calculate the amount you'll have to pay on a home loan\n") # Create a new line before the next input
  
@@ -38,13 +45,13 @@ while True:
                         
                     elif interest == "simple":
                         amount = int(deposit) *(1 + (rate)*time)
-                        exit(f"At the end of {time} years your total amount will be £{float(amount):,.2f}") #value is a float with 2 decimal digits and thousands is separated by a comma
-                        
+                        print(f"At the end of {time} years your total amount will be £{float(amount):,.2f}") #value is a float with 2 decimal digits and thousands is separated by a comma
+                        start_again()
 
                     elif interest == "compound":
                         amount = deposit * math.pow((1+(rate)), time)
-                        exit(f"At the end of {time} years your total amount will be £{float(amount):,.2f}")
-                        
+                        print(f"At the end of {time} years your total amount will be £{float(amount):,.2f}")
+                        start_again()
 
             except ValueError:
                 print("Please enter a number for the deposit, interest rate, and years.")
@@ -67,8 +74,8 @@ while True:
                 installments = int(input("Enter the number of monthly installments: ")) #CORRECTION spelling corrected
 
                 repayments = (rate_house * house_value)/(1 - (1 + rate_house)**(-installments))        #CORRECTION spelling corrected
-                exit(f"Total of {installments} installments of £{float(repayments):,.2f} ")
-                
+                print(f"Total of {installments} installments of £{float(repayments):,.2f} ")
+                start_again()
 
 
             except ValueError:
